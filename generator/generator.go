@@ -5,8 +5,8 @@ import (
     "time"
 )
 
-func GenerateStatement() (statement Statement) {
-    number := GenerateNumberToTransform()
+func GenerateStatement(max int) (statement Statement) {
+    number := GenerateNumberToTransform(max)
     target := GenerateTargetRepresentation()
 
     return Statement{number, target}
@@ -19,8 +19,8 @@ func generateInt(max int) (number int) {
   return
 }
 
-func GenerateNumberToTransform() (int) {
-    return generateInt(255)
+func GenerateNumberToTransform(max int) (int) {
+    return generateInt(max)
 }
 
 func GenerateTargetRepresentation() (target string) {
