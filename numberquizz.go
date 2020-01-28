@@ -8,7 +8,10 @@ import (
 )
 
 func main() {
-    question := fmt.Sprintf("Turn %d into %s: ", generator.GenerateInt(255), generator.GenerateTarget())
+    target := generator.GenerateTargetRepresentation()
+    number := generator.GenerateNumberToTransform()
+
+    question := fmt.Sprintf("Turn %d into %s: ", number, target)
 
     reader := bufio.NewReader(os.Stdin)
     fmt.Print(question)
