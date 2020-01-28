@@ -3,7 +3,6 @@ package main
 import (
     "fmt"
     "github.com/CaptainQuirk/numberquizz/generator"
-    "github.com/CaptainQuirk/numberquizz/solver"
     "bufio"
     "os"
     "strings"
@@ -22,7 +21,7 @@ func main() {
     flag.Parse()
 
     statement := generator.GenerateStatement(*max)
-    solution := solver.Solve(statement)
+    solution := statement.Solve()
 
     reader := bufio.NewReader(os.Stdin)
     fmt.Print(statement.ToQuestion())

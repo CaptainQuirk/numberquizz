@@ -2,6 +2,7 @@ package generator
 
 import (
     "fmt"
+    "strconv"
 )
 
 type Statement struct {
@@ -17,7 +18,7 @@ func (statement Statement) ToQuestion() string {
     return fmt.Sprintf("Turn %d into %s: ", statement.number, statement.representation)
 }
 
-func (statement Statement) GetRepresentationDecimalBase() int {
+func (statement Statement) getRepresentationDecimalBase() int {
     var decimal_base int
     switch (statement.representation) {
     case "binary":
@@ -27,4 +28,8 @@ func (statement Statement) GetRepresentationDecimalBase() int {
     }
 
     return decimal_base
+}
+
+func (statement Statement) Solve() string {
+    return strconv.FormatInt(int64(statement.number), statement.getRepresentationDecimalBase())
 }
