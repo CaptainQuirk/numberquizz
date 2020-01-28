@@ -5,6 +5,13 @@ import (
     "time"
 )
 
+func GenerateStatement() (statement Statement) {
+    number := GenerateNumberToTransform()
+    target := GenerateTargetRepresentation()
+
+    return Statement{number, target}
+}
+
 func generateInt(max int) (number int) {
   rand.Seed(time.Now().UnixNano())
   number = rand.Intn(max)
