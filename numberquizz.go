@@ -9,7 +9,7 @@ import (
     "flag"
 )
 
-func filter(text string) string {
+func trimNl(text string) string {
     text = strings.TrimRight(text, "\n")
 
     return text
@@ -25,7 +25,7 @@ func main() {
     reader := bufio.NewReader(os.Stdin)
     fmt.Print(statement.ToQuestion())
     text, _ := reader.ReadString('\n')
-    answer := filter(text)
+    answer := trimNl(text)
 
     if (strings.ToLower(answer) != solution) {
         fmt.Printf("Error ! Answer was « %s » and got « %s »\n", solution, answer)
