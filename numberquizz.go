@@ -7,6 +7,7 @@ import (
     "bufio"
     "os"
     "strings"
+    "flag"
 )
 
 func filter(text string) string {
@@ -17,7 +18,10 @@ func filter(text string) string {
 }
 
 func main() {
-    statement := generator.GenerateStatement()
+    max := flag.Int("max", 15, "The maximum number to quizz for")
+    flag.Parse()
+
+    statement := generator.GenerateStatement(*max)
     solution := solver.Solve(statement)
 
     reader := bufio.NewReader(os.Stdin)
