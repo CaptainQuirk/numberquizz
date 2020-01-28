@@ -6,5 +6,7 @@ import (
 )
 
 func main() {
-    fmt.Println(generator.GenerateInt(255))
+    question := fmt.Sprintf("Turn %d into %s: ", generator.GenerateInt(255), generator.GenerateTarget())
+
+    fmt.Println(question)
 }

@@ -11,3 +11,11 @@ func GenerateInt(max int) (number int) {
 
     return
 }
+
+func GenerateTarget() (target string) {
+    targets := [2]string{"binary", "hexadecimal"}
+    index := GenerateInt(2)
+    target = targets[index]
+
+    return
+}
