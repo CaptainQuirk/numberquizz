@@ -5,20 +5,20 @@ import (
     "time"
 )
 
-func GenerateNumberToTransform() (int) {
-    return GenerateInt(255)
+func generateInt(max int) (number int) {
+  rand.Seed(time.Now().UnixNano())
+  number = rand.Intn(max)
+
+  return
 }
 
-func GenerateInt(max int) (number int) {
-    rand.Seed(time.Now().UnixNano())
-    number = rand.Intn(max)
-
-    return
+func GenerateNumberToTransform() (int) {
+    return generateInt(255)
 }
 
 func GenerateTargetRepresentation() (target string) {
     targets := [2]string{"binary", "hexadecimal"}
-    index := GenerateInt(2)
+    index := generateInt(2)
     target = targets[index]
 
     return
