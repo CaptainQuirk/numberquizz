@@ -1,8 +1,6 @@
 COMMANDS := $(MAKEFILE_LIST)
 build: ## Compiles the project and installs a binary in the bin subdirectory
 	@go install .
-run: ## Run the binary output in the bin subdirectory
-	@numberquizz
 help:
 	@echo "\033[91mNumber quizz\n============\033[0m\n\nCommand line application that quizzes for different representation of a number. For educational purposes."
 	@echo "\n\033[35mAvailable commands\033[0m\n"
