@@ -9,6 +9,13 @@ import (
     "strings"
 )
 
+func filter(text string) string {
+    text = strings.TrimRight(text, "\n")
+    text = strings.ToLower(text)
+
+    return text
+}
+
 func main() {
     statement := generator.GenerateStatement()
     solution := solver.Solve(statement)
@@ -16,8 +23,9 @@ func main() {
     reader := bufio.NewReader(os.Stdin)
     fmt.Print(statement.ToQuestion())
     text, _ := reader.ReadString('\n')
+    answer := filter(text)
 
-    if (strings.TrimRight(answer, "\n") != solution) {
+    if (answer != solution) {
         fmt.Printf("Error ! Answer was « %s » and got « %s »\n", solution, answer)
     } else {
         fmt.Println("Congrats ! You win !")
