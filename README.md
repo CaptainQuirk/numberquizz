@@ -1,5 +1,14 @@
 # Number quizz
 
+`numberquizz` will prompt you for the *binary* or *hexadecimal* chosen
+between 0 and a max value.
+
+## Usage
+
+```sh
+$ numberquizz [--max <int>]
+```
+
 ## Installation
 
 Run `git clone https://github.com/CaptainQuirk/numberquizz.git`
@@ -34,10 +43,6 @@ PATH_add /home/leonard/Projects/CaptainQuirk/LearnGo/Code/numberquizz/bin
 ## Build
 
 - Run `make build` or `go install`
-
-## Run
-
-- Run `make run` or `numberquizz`
 
 [direnv]: https://direnv.net/
 [globally_ignored_rcd]: https://github.com/CaptainQuirk/.gitglobal/blob/master/gitignore#L30
