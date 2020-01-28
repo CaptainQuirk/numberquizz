@@ -1,5 +1,6 @@
 COMMANDS := $(MAKEFILE_LIST)
 build: ## Compiles the project and installs a binary in the bin subdirectory
+	@cd generator; go build; cd - > /dev/null
 	@go install .
 help:
 	@echo "\033[91mNumber quizz\n============\033[0m\n\nCommand line application that quizzes for different representation of a number. For educational purposes."
