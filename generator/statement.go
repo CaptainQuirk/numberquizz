@@ -7,7 +7,7 @@ import (
 
 type Statement struct {
     number int
-    representation string
+    representation Representation
 }
 
 func (statement Statement) GetNumber() int {
@@ -15,19 +15,11 @@ func (statement Statement) GetNumber() int {
 }
 
 func (statement Statement) ToQuestion() string {
-    return fmt.Sprintf("Turn %d into %s: ", statement.number, statement.representation)
+    return fmt.Sprintf("Turn %d into %s: ", statement.number, statement.representation.Name())
 }
 
 func (statement Statement) getRepresentationDecimalBase() int {
-    var decimal_base int
-    switch (statement.representation) {
-    case "binary":
-      decimal_base = 2
-    case "hexadecimal":
-      decimal_base = 16
-    }
-
-    return decimal_base
+    return statement.representation.Base()
 }
 
 func (statement Statement) Solve() string {

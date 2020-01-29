@@ -7,9 +7,9 @@ import (
 
 func GenerateStatement(max int) (statement Statement) {
     number := GenerateNumberToTransform(max)
-    target := GenerateTargetRepresentation()
+    representation := GenerateTargetRepresentation()
 
-    return Statement{number, target}
+    return Statement{number, representation}
 }
 
 func generateInt(max int) (number int) {
@@ -23,10 +23,14 @@ func GenerateNumberToTransform(max int) (int) {
     return generateInt(max)
 }
 
-func GenerateTargetRepresentation() (target string) {
-    targets := [2]string{"binary", "hexadecimal"}
+func GenerateTargetRepresentation() (representation Representation) {
+    var representations []Representation
+
+    representations = append(representations, Representation{"binary", 10})
+    representations = append(representations, Representation{"hexadecimal", 16})
+
     index := generateInt(2)
-    target = targets[index]
+    representation = representations[index]
 
     return
 }
