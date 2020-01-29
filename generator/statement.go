@@ -10,7 +10,7 @@ type Statement struct {
     representation Representation
 }
 
-func (statement Statement) GetNumber() int {
+func (statement Statement) Number() int {
     return statement.number
 }
 
