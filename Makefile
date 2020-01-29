@@ -3,8 +3,7 @@ build: ## Compiles the project and installs a binary in the bin subdirectory
 	@cd generator; go build; cd - > /dev/null
 	@go install .
 test:
-	@cd generator; go test; cd - > /dev/null
-	@go test
+	@go test ./..
 help:
 	@echo "\033[91mNumber quizz\n============\033[0m\n\nCommand line application that quizzes for different representation of a number. For educational purposes."
 	@echo "\n\033[35mAvailable commands\033[0m\n"
