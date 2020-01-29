@@ -26,7 +26,7 @@ func generateNumberToTransform(max int) (int) {
 func generateTargetRepresentation() (representation Representation) {
     var representations []Representation
 
-    representations = append(representations, Representation{"binary", 10})
+    representations = append(representations, Representation{"binary", 2})
     representations = append(representations, Representation{"hexadecimal", 16})
 
     index := generateInt(2)
